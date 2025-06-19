@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour
     Transform target;
     Rigidbody2D rb;
     [SerializeField] float moveSpeed = 2f;
-    [SerializeField] int damage = 1;
+    [SerializeField] float damage = 1f;
 
     void Start()
     {
@@ -34,12 +34,11 @@ public class Enemy : MonoBehaviour
     }
 
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
-            Destroy(gameObject);
         }
     }
 }

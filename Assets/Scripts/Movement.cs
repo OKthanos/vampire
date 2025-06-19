@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveInput;
     Animator animator;
+    PlayerStats playerStats;
 
     void Start()
     {
+        playerStats = FindFirstObjectByType<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -39,6 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * moveSpeed;
+        rb.linearVelocity = moveInput * playerStats.GetMoveSpeed();
     }
 }
