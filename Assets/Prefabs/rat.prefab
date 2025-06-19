@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8199918089105121285}
   - component: {fileID: 3170135218367797261}
   - component: {fileID: 8219471866359255378}
-  - component: {fileID: 5563956176777311918}
+  - component: {fileID: -7024667870100807840}
   m_Layer: 7
-  m_Name: boneworm-blue
+  m_Name: rat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 283b986b48549674ab2c6128d296ecaa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2aeeb2642ebe5f43af54de7c94996a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,17 +125,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.000000044703484, y: -0.016466156}
+  m_Offset: {x: -0.0009839535, y: -0.0932183}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32000008, y: 0.28706768}
+  m_Size: {x: 0.5502567, y: 0.34610778}
   m_EdgeRadius: 0
 --- !u!50 &3170135218367797261
 Rigidbody2D:
@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db369e602bb5e334182120bd4d3a29ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  damage: 1
---- !u!114 &5563956176777311918
+  moveSpeed: 1.5
+  damage: 2
+--- !u!114 &-7024667870100807840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b907b3136a7fcee409cfd40167222e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 6
   experience: 0
   gemPrefab: {fileID: 8502610403143780520, guid: ba4cbe9f5f8fd044d8118aadce71e58d, type: 3}

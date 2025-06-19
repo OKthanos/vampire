@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int maxHealth = 10;
+    [SerializeField] float maxHealth = 10f;
     [SerializeField] Slider healthBar;
-    int currentHealth;
+    float currentHealth;
     Animator animator;
+    public bool isDead = false;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = currentHealth;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         currentHealth = Mathf.Max(0, currentHealth);
@@ -33,7 +34,17 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        
+        isDead = true;
+        animator.SetTrigger("Die");
         Debug.Log("Player Died");
+
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().simulated = false;
+        GetComponent<Collider2D>().enabled = false;
+
+
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerAttack>().enabled = false;
+        GameManager.Instance.GameOver();
     }
 }

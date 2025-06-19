@@ -1,32 +1,46 @@
 using UnityEngine;
+using System.Collections.Generic;
+
+
+[System.Serializable]
+class EnemySpawnData
+{
+    public GameObject enemyPrefab;
+    public float spawnInterval = 2f;
+    public float minSpawnDistance = 3f;
+    public float maxSpawnDistance = 7f;
+    public float timer;
+}
+
+
+
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemyPrefab;
-    [SerializeField] float spawnInterval = 2f;
-    [SerializeField] float minSpawnDistance = 3f;
-    [SerializeField] float maxSpawnDistance = 7f;
-
-    float timer;
+    [SerializeField] List<EnemySpawnData> enemyTypes = new();
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnInterval)
+        foreach (var enemy in enemyTypes)
         {
-            SpawnEnemy();
-            timer = 0f;
+            enemy.timer += Time.deltaTime;
+
+            if (enemy.timer >= enemy.spawnInterval)
+            {
+                Spawn(enemy);
+                enemy.timer = 0f;
+            }
         }
     }
 
-    void SpawnEnemy()
+    void Spawn(EnemySpawnData data)
     {
         var player = GameObject.FindWithTag("Player").transform;
 
-        float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
-        Vector2 direction = Random.insideUnitCircle.normalized;
-        Vector2 spawnPos = (Vector2)player.position + direction * distance;
+        float distance = Random.Range(data.minSpawnDistance, data.maxSpawnDistance);
+        Vector2 dir = Random.insideUnitCircle.normalized;
+        Vector2 spawnPos = (Vector2)player.position + dir * distance;
 
-        Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        Instantiate(data.enemyPrefab, spawnPos, Quaternion.identity);
     }
 }

@@ -9,6 +9,8 @@ public class TimeFlow : MonoBehaviour
 
     void Update()
     {
+        if (FindFirstObjectByType<PlayerHealth>().isDead)
+            return;
         elapsedTime += Time.deltaTime;
         int minute = Mathf.FloorToInt(elapsedTime / 60f);
         int second = Mathf.FloorToInt(elapsedTime % 60f);
