@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4320067623896560855}
   - component: {fileID: -8241466199768559678}
   - component: {fileID: 3905528643147387339}
-  - component: {fileID: 291847295997762889}
+  - component: {fileID: 1381932475061049763}
   m_Layer: 0
   m_Name: HommingMissile
   m_TagString: Untagged
@@ -154,7 +154,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.07063199, y: 0.0000037039083}
   m_Size: {x: 4.178744, y: 1.3406932}
   m_Direction: 1
---- !u!114 &291847295997762889
+--- !u!114 &1381932475061049763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8308378032241088709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88175df9fbf6b0440ad08ec8a6b09119, type: 3}
+  m_Script: {fileID: 11500000, guid: c96e58e085c934dc9a64121b01367a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotateSpeed: 200
-  lifeTime: 5
-  detectionRadius: 10
-  damage: 2
+  seekRadius: 10
+  offsetX: 0.8
+  offsetY: 0
