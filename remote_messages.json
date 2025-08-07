@@ -1,0 +1,24 @@
+{
+  "messages": [
+    {
+      "id": "login_reward_18",
+      "title": "오후 6시 보상",
+      "content": "6시에 접속해줘서 고마워!",
+      "rewardType": "Ruby",
+      "rewardAmount": 100,
+      "claimed": false,
+      "startTime": "2025-08-07T18:00:00+09:00",
+      "endTime": "2025-08-07T18:59:59+09:00"
+    },
+    {
+      "id": "login_reward_21",
+      "title": "오후 9시 보상",
+      "content": "9시에 또 오다니 멋져!",
+      "rewardType": "Coin",
+      "rewardAmount": 200,
+      "claimed": false,
+      "startTime": "2025-08-07T21:00:00+09:00",
+      "endTime": "2025-08-07T21:59:59+09:00"
+    }
+  ]
+}
