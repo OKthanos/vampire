@@ -7,8 +7,8 @@
       "rewardType": "Ruby",
       "rewardAmount": 100,
       "claimed": false,
-      "startTime": "2025-08-07T14:55:00+09:00",
-      "endTime": "2025-08-07T18:59:59+09:00"
+      "startTime": "2025-08-08T17:10:00+09:00",
+      "endTime": "2025-08-08T17:59:59+09:00"
     },
     {
       "id": "login_reward_21",
@@ -23,6 +23,7 @@
   ]
 
 }
+
 
 
 
